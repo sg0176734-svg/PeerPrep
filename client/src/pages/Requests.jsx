@@ -79,7 +79,7 @@ function Requests() {
       }
 
       const response = await axios.put(
-        "https://peerprep-backend-7qvh.onrender.com/api/interview/received",
+        `https://peerprep-backend-7qvh.onrender.com/api/interview/request/${requestId}/accept`,
         {
           meetingLink,
           duration: Number(duration),
@@ -121,7 +121,7 @@ function Requests() {
       const token = localStorage.getItem("peerprepToken");
 
       const response = await axios.put(
-        "https://peerprep-backend-7qvh.onrender.com/api/interview/received",
+        `https://peerprep-backend-7qvh.onrender.com/api/interview/request/${requestId}/reject`,
         {},
         {
           headers: {
