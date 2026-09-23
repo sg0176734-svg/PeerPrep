@@ -53,7 +53,7 @@ function RequestInterview() {
       const token = localStorage.getItem("peerprepToken");
 
       const response = await axios.post(
-        "http://localhost:5000/api/interview/request",
+        "https://peerprep-backend-7qvh.onrender.com/api/interview/request",
         {
           receiverId: peer.id,
           interviewType: formData.interviewType,

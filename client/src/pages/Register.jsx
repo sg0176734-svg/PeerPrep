@@ -32,7 +32,7 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://peerprep-backend-7qvh.onrender.com/api/auth/register",
         formData
       );
 

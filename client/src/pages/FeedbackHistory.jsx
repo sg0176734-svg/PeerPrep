@@ -14,7 +14,7 @@ function FeedbackHistory() {
     const fetchFeedback = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/feedback/my-feedback",
+          "https://peerprep-backend-7qvh.onrender.com/api/feedback/my-feedback",
           {
             headers: {
               Authorization: `Bearer ${token}`,

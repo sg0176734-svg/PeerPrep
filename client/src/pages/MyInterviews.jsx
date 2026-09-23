@@ -23,7 +23,7 @@ function MyInterviews() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/interview/my-interviews",
+        "https://peerprep-backend-7qvh.onrender.com/api/interview/my-interviews",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ function MyInterviews() {
       const token = localStorage.getItem("peerprepToken");
 
       const response = await axios.put(
-        `http://localhost:5000/api/interview/${sessionId}/complete`,
+        `https://peerprep-backend-7qvh.onrender.com/api/interview/${sessionId}/complete`,
         {},
         {
           headers: {

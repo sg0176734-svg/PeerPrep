@@ -24,7 +24,7 @@ function Peers() {
 
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/matching/peers",
+          "https://peerprep-backend-7qvh.onrender.com/api/matching/peers",
           {
             headers: {
               Authorization: `Bearer ${token}`,

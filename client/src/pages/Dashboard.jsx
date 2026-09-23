@@ -28,11 +28,11 @@ function Dashboard() {
         const [profileResponse, interviewResponse] =
           await Promise.all([
             axios.get(
-              "http://localhost:5000/api/user/profile",
+              "https://peerprep-backend-7qvh.onrender.com/api/user/profile",
               config
             ),
             axios.get(
-              "http://localhost:5000/api/interview/my-interviews",
+              "https://peerprep-backend-7qvh.onrender.com/api/interview/my-interviews",
               config
             ),
           ]);

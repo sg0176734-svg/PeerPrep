@@ -38,7 +38,7 @@ function Profile() {
         }
 
         const response = await axios.get(
-          "http://localhost:5000/api/user/profile",
+          "https://peerprep-backend-7qvh.onrender.com/api/user/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -148,7 +148,7 @@ function Profile() {
       };
 
       const response = await axios.put(
-        "http://localhost:5000/api/user/profile",
+        "https://peerprep-backend-7qvh.onrender.com/api/user/profile",
         payload,
         {
           headers: {

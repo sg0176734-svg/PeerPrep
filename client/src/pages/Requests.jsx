@@ -26,7 +26,7 @@ function Requests() {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/api/interview/received",
+        "https://peerprep-backend-7qvh.onrender.com/api/interview/received",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ function Requests() {
       }
 
       const response = await axios.put(
-        `http://localhost:5000/api/interview/request/${requestId}/accept`,
+        "https://peerprep-backend-7qvh.onrender.com/api/interview/received",
         {
           meetingLink,
           duration: Number(duration),
@@ -121,7 +121,7 @@ function Requests() {
       const token = localStorage.getItem("peerprepToken");
 
       const response = await axios.put(
-        `http://localhost:5000/api/interview/request/${requestId}/reject`,
+        "https://peerprep-backend-7qvh.onrender.com/api/interview/received",
         {},
         {
           headers: {

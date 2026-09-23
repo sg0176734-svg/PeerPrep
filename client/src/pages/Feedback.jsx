@@ -155,7 +155,7 @@ function Feedback() {
       const token = localStorage.getItem("peerprepToken");
 
       const response = await axios.post(
-        "http://localhost:5000/api/feedback",
+         "https://peerprep-backend-7qvh.onrender.com/api/feedback",
         {
           interviewId: interview._id,
           overallRating: Number(formData.overallRating),
