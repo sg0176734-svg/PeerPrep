@@ -14,20 +14,21 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
+connectDB();
+
 // ==========================================
 // CORS Configuration
 // ==========================================
 
 const allowedOrigins = [
-  "https://peer-prep-3aphe4qnu-sg0176734-svgs-projects.vercel.app",
   "http://localhost:5173",
+  "https://peer-prep-py7xynrzn-sg0176734-svgs-projects.vercel.app",
+  "https://peer-prep-3aphe4qnu-sg0176734-svgs-projects.vercel.app",
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests without origin
-      // (Postman, server-to-server requests, etc.)
       if (!origin) {
         return callback(null, true);
       }
@@ -46,12 +47,6 @@ app.use(
 app.use(express.json());
 
 // ==========================================
-// Database
-// ==========================================
-
-connectDB();
-
-// ==========================================
 // Home
 // ==========================================
 
@@ -67,13 +62,9 @@ app.get("/", (req, res) => {
 // ==========================================
 
 app.use("/api/auth", authRoutes);
-
 app.use("/api/user", userRoutes);
-
 app.use("/api/matching", matchingRoutes);
-
 app.use("/api/interview", interviewRoutes);
-
 app.use("/api/feedback", feedbackRoutes);
 
 // ==========================================
