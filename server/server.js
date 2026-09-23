@@ -14,11 +14,42 @@ const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-connectDB();
+// ==========================================
+// CORS Configuration
+// ==========================================
 
-app.use(cors());
+const allowedOrigins = [
+  "https://peer-prep-3aphe4qnu-sg0176734-svgs-projects.vercel.app",
+  "http://localhost:5173",
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests without origin
+      // (Postman, server-to-server requests, etc.)
+      if (!origin) {
+        return callback(null, true);
+      }
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
 app.use(express.json());
 
+// ==========================================
+// Database
+// ==========================================
+
+connectDB();
 
 // ==========================================
 // Home
@@ -30,7 +61,6 @@ app.get("/", (req, res) => {
     message: "PeerPrep API is running 🚀",
   });
 });
-
 
 // ==========================================
 // API Routes
@@ -45,7 +75,6 @@ app.use("/api/matching", matchingRoutes);
 app.use("/api/interview", interviewRoutes);
 
 app.use("/api/feedback", feedbackRoutes);
-
 
 // ==========================================
 // Start Server
